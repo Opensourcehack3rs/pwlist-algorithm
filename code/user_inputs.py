@@ -1,4 +1,4 @@
-# Version 0.1
+# Version 0.2
 
 def user_inp_information():
     print("*** INFORMATION SPIDER FOR GENERATING THE PASSWORD-LIST ***")
@@ -15,12 +15,19 @@ def user_inp_information():
     standard_info["Place-of-birth"] = input("PLACE OF BIRTH: ")
     standard_info["Birthday"] = input("DATE OF BIRTH: ")
     standard_info["Loved"] = input("NAME OF WIFE/GIRLFRIEND | HUSBAND/BOYFRIEND | IF NOT EXISTENT ENTER: none ")
+    x = 1
+    if standard_info["Loved"] == "none":
+        pass
+    else:
+        standard_info["Loved-nickname"] = input("NICKNAME OF WIFE/GIRLFRIEND | HUSBAND/Boyfriend | IF NOT EXISTENT ENTER NONE: ")
+        standard_info["Loved-birthday"] = input("BIRTHDAY OF THE SIGNIFICANT OTHER: ")
+
     info2 = int(input("NUMBER OF CHILDREN: "))
     x = 1
     while info2 > 0:
-        standard_info["chilren-name-" + str(x)] = input("NAME OF CHILD" + str(x) + ": ")
-        standard_info["children-nickname-" + str(x)] = input("NICKNAME OF CHILD" + str(x) + ": ")
-        standard_info["children-birthday-" + str(x)] = input("CHILD'S" + str(x) + "DATE OF BIRTH: ")
+        standard_info["chilren-name-" + str(x)] = input("NAME OF CHILD " + str(x) + ": ")
+        standard_info["children-nickname-" + str(x)] = input("NICKNAME OF CHILD " + str(x) + ": ")
+        standard_info["children-birthday-" + str(x)] = input("CHILD'S " + str(x) + " DATE OF BIRTH: ")
         x = x + 1
         info2 = info2 -1
     standard_info["fav-number"] = input("FAVOURITE NUMBER | IF NOT EXISTENT ENTER: none ")
