@@ -1,4 +1,4 @@
-# Version 0.1
+# Version 0.2
 from algorithm_data import *
 from user_inputs import *
 print("*** PWLIST-ALGORITHM BY Opensourcehack3rs ***")
