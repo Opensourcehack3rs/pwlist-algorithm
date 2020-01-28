@@ -2,6 +2,7 @@
 
 def user_inp_information():
     print("*** INFORMATION SPIDER FOR GENERATING THE PASSWORD-LIST ***")
+    print("*** ENTER DATES IN THIS FORMAT DD/MM/YYYY ***")
     x = 1
     standard_info = {}
     standard_info["First-Name"] = input("FIRST NAME OF THE TARGET: ")
