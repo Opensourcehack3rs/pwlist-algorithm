@@ -1,4 +1,4 @@
-# Version 0.2
+# Version 0.3
 def string_filtering(standard_info):
     from copy import deepcopy
     standard_info_copy = deepcopy(standard_info)
@@ -26,8 +26,10 @@ def string_filtering(standard_info):
     return base_list
 
 
-def data_processing(base_list):
+def data_processing(base_list, length_limit):
     import itertools
+    if length_limit == "none":
+        length_limit = 100
     end_list = []
     file = open("pwlist-created-wordlist.txt", "w")
     file.write("")
@@ -36,10 +38,16 @@ def data_processing(base_list):
     for i in range(1,len(base_list)+1):
         drip = [list(x) for x in itertools.permutations(base_list, i)]
         end_list.extend(drip)
-    for element in end_list:
-        string = ''.join(element)
-        if len(string) <= 12:
-            file.write(string + "\n")
+    print("*** WRITING GENERATED PASSWORDS INTO THE WODLIST ***")
+    if int(length_limit) != 0:
+        for element in end_list:
+            string = ''.join(element)
+            if len(string) <= int(length_limit) :
+                file.write(string + "\n")
         else:
             pass
+    else:
+        for element in end_list:
+            string = ''.join(element)
+            file.write(string + "\n")
     file.close()

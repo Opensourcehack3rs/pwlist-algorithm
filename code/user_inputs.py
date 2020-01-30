@@ -1,4 +1,7 @@
-# Version 0.2
+# Version 0.3
+def pw_len_limit():
+    length_limit = input("PLEASE ENTER THE MAXIMUM LENGTH FOR THE PASSWORDS GETTING GENERATED | FOR NO LIMIT ENTER 0:  ")
+    return length_limit
 
 def user_inp_information():
     print("*** INFORMATION SPIDER FOR GENERATING THE PASSWORD-LIST ***")
@@ -35,3 +38,6 @@ def user_inp_information():
     standard_info["gamertag/nickname"]=input("GAMERTAG OR NICKNAME | IF NOT EXISTENT ENTER: none ")
 
     return standard_info
+
+def user_inp_add_information():
+    pass
