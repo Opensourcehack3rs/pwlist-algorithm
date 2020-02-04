@@ -28,26 +28,20 @@ def string_filtering(standard_info):
 
 def data_processing(base_list, length_limit):
     import itertools
-    if length_limit == "none":
-        length_limit = 100
     end_list = []
+    if length_limit == "none":
+        length_limit = 18
     file = open("pwlist-created-wordlist.txt", "w")
     file.write("")
     file.close()
     file = open("pwlist-created-wordlist.txt", "a")
-    for i in range(1,len(base_list)+1):
+    for i in range(1, len(base_list) + 1):
         drip = [list(x) for x in itertools.permutations(base_list, i)]
         end_list.extend(drip)
-    print("*** WRITING GENERATED PASSWORDS INTO THE WODLIST ***")
-    if int(length_limit) != 0:
-        for element in end_list:
-            string = ''.join(element)
-            if len(string) <= int(length_limit) :
-                file.write(string + "\n")
+    print("*** WRITING GENERATED PASSWORDS INTO THE WORDLIST ***")
+    for element in end_list:
+        string = ''.join(element)
+        if len(string) <= int(length_limit):
+           file.write(string + "\n")
         else:
             pass
-    else:
-        for element in end_list:
-            string = ''.join(element)
-            file.write(string + "\n")
-    file.close()
