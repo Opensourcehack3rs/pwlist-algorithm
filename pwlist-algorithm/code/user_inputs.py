@@ -40,4 +40,23 @@ def user_inp_information():
     return standard_info
 
 def user_inp_add_information():
-    pass
+    q1 = input("ANY ADDITIONAL INFORMATION TO ADD: Y | N: ")
+    if q1 == "N":
+        addi_info = 0
+    if q1 == "Y":
+        addi_info  = []
+        print("PLEASE ENTER DATES IN THE FORMAT: DD/MM/YYYY START WITH A HASHTAG #DD/MM/YYYY")
+        print("DO NOT USE ANY SPECIAL SIGNS EXCEPT THE # ")
+        print("TO STOP THE QUESTIONS ENTER none")
+        x = 1
+        while x != 0:
+            add = input("INFORMATION " + str(x) + ": ")
+            if add == "none":
+                x = 0
+            else:
+                addi_info.append(add)
+                x = x + 1
+    return addi_info
+
+
+
